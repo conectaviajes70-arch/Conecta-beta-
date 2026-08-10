@@ -14,10 +14,13 @@
 
     <style>
 
-        /* =================================
+        /* =========================================
            CONECTA - PORTAL PRINCIPAL
-           Estilos exclusivos de index.html
-        ================================= */
+           v0.9.1 Stable
+
+           Estilos exclusivos de la portada.
+           NO modifica conecta.css
+        ========================================= */
 
         * {
             box-sizing: border-box;
@@ -27,31 +30,51 @@
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
             min-height: 100%;
         }
 
         body {
+
+            width: 100%;
+            min-height: 100vh;
+
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
             background:
-                linear-gradient(
-                    180deg,
-                    #f7fbfc 0%,
-                    #ffffff 100%
-                );
 
-            color: #1f2933;
+                radial-gradient(
+                    circle at top,
+                    rgba(0, 229, 255, 0.07),
+                    transparent 42%
+                ),
+
+                #090D18;
+
+            color: #FFFFFF;
+
+            -webkit-font-smoothing: antialiased;
+
+            overflow-x: hidden;
         }
 
+
+        /* =========================================
+           CONTENEDOR PRINCIPAL
+        ========================================= */
+
         .portal {
+
             width: 100%;
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
 
             padding:
@@ -59,13 +82,16 @@
         }
 
 
-        /* =================================
+        /* =========================================
            LOGOTIPO
-        ================================= */
+        ========================================= */
 
         .logo {
+
             width: 190px;
+
             max-width: 65vw;
+
             height: auto;
 
             display: block;
@@ -75,27 +101,43 @@
         }
 
 
-        /* =================================
-           TITULOS
-        ================================= */
+        /* =========================================
+           TITULO
+        ========================================= */
 
         .brand-title {
+
             margin: 0;
 
             text-align: center;
 
-            font-size: clamp(
-                28px,
-                7vw,
-                40px
-            );
+            color: #00E5FF;
 
-            font-weight: 800;
+            font-size:
+                clamp(
+                    28px,
+                    7vw,
+                    40px
+                );
+
+            font-weight: 700;
+
+            line-height: 1.2;
 
             letter-spacing: -0.5px;
+
+            text-shadow:
+                0 0 12px
+                rgba(0, 229, 255, 0.18);
         }
 
+
+        /* =========================================
+           SUBTITULO
+        ========================================= */
+
         .brand-subtitle {
+
             margin:
                 8px auto 0;
 
@@ -103,33 +145,38 @@
 
             text-align: center;
 
-            font-size: clamp(
-                15px,
-                4vw,
-                18px
-            );
+            color: #FFFFFF;
+
+            font-size:
+                clamp(
+                    15px,
+                    4vw,
+                    18px
+                );
+
+            font-weight: 600;
 
             line-height: 1.5;
-
-            color: #5f6b73;
         }
 
 
-        /* =================================
-           CONTENEDOR DE OPCIONES
-        ================================= */
+        /* =========================================
+           OPCIONES
+        ========================================= */
 
         .options {
+
             width: 100%;
+
             max-width: 430px;
 
             margin-top: 35px;
         }
 
 
-        /* =================================
+        /* =========================================
            BOTONES
-        ================================= */
+        ========================================= */
 
         .option-button {
 
@@ -145,6 +192,7 @@
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             gap: 12px;
@@ -159,78 +207,123 @@
 
             letter-spacing: 0.2px;
 
+            cursor: pointer;
+
             transition:
-                transform 0.15s ease,
-                box-shadow 0.15s ease;
+
+                transform 0.25s ease,
+
+                box-shadow 0.25s ease,
+
+                background 0.25s ease;
 
             -webkit-tap-highlight-color:
                 transparent;
         }
 
+
+        /* =========================================
+           EFECTO AL TOCAR / PASAR
+        ========================================= */
+
         .option-button:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-1px);
         }
 
         .option-button:active {
-            transform: scale(0.98);
+
+            transform:
+                scale(0.98);
         }
 
 
-        /* =================================
-           PASAJERO
-        ================================= */
+        /* =========================================
+           BOTÓN PASAJERO
+           ESTILO SECUNDARIO CONECTA
+        ========================================= */
 
         .passenger-button {
 
-            background: #ffffff;
+            background:
+                transparent;
 
-            color: #00a6a6;
+            color:
+                #00E5FF;
 
             border:
-                2px solid #00a6a6;
+                1px solid
+                rgba(0, 229, 255, 0.35);
 
             box-shadow:
-                0 5px 16px
-                rgba(0, 0, 0, 0.08);
+                none;
+        }
+
+        .passenger-button:hover {
+
+            background:
+                rgba(0, 229, 255, 0.15);
+
+            box-shadow:
+                0 0 18px
+                rgba(0, 229, 255, 0.25);
         }
 
 
-        /* =================================
-           CONDUCTOR
-        ================================= */
+        /* =========================================
+           BOTÓN CONDUCTOR
+           ESTILO PRINCIPAL CONECTA
+        ========================================= */
 
         .driver-button {
 
-            background: #00a6a6;
+            background:
+                #00E5FF;
 
-            color: #ffffff;
+            color:
+                #090D18;
 
             border:
-                2px solid #00a6a6;
+                1px solid
+                #00E5FF;
 
             box-shadow:
-                0 7px 18px
-                rgba(0, 166, 166, 0.22);
+                0 6px 18px
+                rgba(0, 229, 255, 0.15);
+        }
+
+        .driver-button:hover {
+
+            background:
+                #1AE9FF;
+
+            box-shadow:
+                0 0 18px
+                rgba(0, 229, 255, 0.25);
         }
 
 
-        /* =================================
+        /* =========================================
            ICONOS
-        ================================= */
+        ========================================= */
 
         .button-icon {
+
             font-size: 25px;
+
             line-height: 1;
         }
 
 
-        /* =================================
+        /* =========================================
            INFORMACIÓN
-        ================================= */
+        ========================================= */
 
         .information {
 
             width: 100%;
+
             max-width: 430px;
 
             margin-top: 8px;
@@ -240,25 +333,31 @@
 
             text-align: center;
 
-            border-radius: 16px;
+            border-radius: 18px;
 
             background:
-                rgba(255, 255, 255, 0.9);
+                #121827;
 
             border:
-                1px solid #e5e9eb;
+                1px solid
+                rgba(255, 255, 255, 0.08);
 
-            color: #68747c;
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.35);
+
+            color:
+                #AAB4C8;
 
             font-size: 14px;
 
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
 
-        /* =================================
-           PIE
-        ================================= */
+        /* =========================================
+           PIE DE PÁGINA
+        ========================================= */
 
         .footer {
 
@@ -268,7 +367,8 @@
 
             text-align: center;
 
-            color: #8a959c;
+            color:
+                #AAB4C8;
 
             font-size: 12px;
 
@@ -276,27 +376,33 @@
         }
 
 
-        /* =================================
+        /* =========================================
            PANTALLAS PEQUEÑAS
-        ================================= */
+        ========================================= */
 
         @media (max-height: 650px) {
 
             .portal {
+
                 padding-top: 20px;
             }
 
             .logo {
+
                 width: 145px;
+
                 margin-bottom: 10px;
             }
 
             .options {
+
                 margin-top: 22px;
             }
 
             .option-button {
+
                 min-height: 58px;
+
                 margin-bottom: 12px;
             }
 
@@ -312,9 +418,9 @@
     <main class="portal">
 
 
-        <!-- ==============================
-             LOGO CONECTA
-        =============================== -->
+        <!-- =====================================
+             LOGOTIPO CONECTA
+        ====================================== -->
 
         <img
             src="assets/logo-conecta.png"
@@ -323,9 +429,9 @@
         >
 
 
-        <!-- ==============================
+        <!-- =====================================
              PRESENTACIÓN
-        =============================== -->
+        ====================================== -->
 
         <h1 class="brand-title">
             Conecta ViajaYa
@@ -338,9 +444,9 @@
         </p>
 
 
-        <!-- ==============================
-             OPCIONES PRINCIPALES
-        =============================== -->
+        <!-- =====================================
+             ACCESOS PRINCIPALES
+        ====================================== -->
 
         <section class="options">
 
@@ -384,9 +490,9 @@
         </section>
 
 
-        <!-- ==============================
+        <!-- =====================================
              INFORMACIÓN
-        =============================== -->
+        ====================================== -->
 
         <section class="information">
 
@@ -398,13 +504,14 @@
         </section>
 
 
-        <!-- ==============================
+        <!-- =====================================
              PIE DE PÁGINA
-        =============================== -->
+        ====================================== -->
 
         <footer class="footer">
 
             © 2026 Conecta ViajaYa
+
             <br>
 
             Conectando viajes. Creando herramientas.
