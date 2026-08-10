@@ -9,7 +9,7 @@
 =========================================
 */
 
-const API_URL = "AQUI_VA_TU_URL_DE_APPS_SCRIPT";
+const API_URL = "https://script.google.com/macros/s/AKfycbxjszK1c_tq1Ijpxdgyxz7LMWqlmFYKJUQK-3aC-wjqSInqMbEXqGtWyfr0AuzJP-MnCw/exec";
 
 const ConectaAPI = {
 
