@@ -12,72 +12,349 @@
 
     <title>Conecta ViajaYa</title>
 
-    <!-- ============================
-         CONECTA CSS
-    ============================= -->
+    <style>
 
-    <link
-        rel="stylesheet"
-        href="css/conecta.css"
-    >
+        /* =================================
+           CONECTA - PORTAL PRINCIPAL
+           Estilos exclusivos de index.html
+        ================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #f7fbfc 0%,
+                    #ffffff 100%
+                );
+
+            color: #1f2933;
+        }
+
+        .portal {
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding:
+                35px 20px 25px;
+        }
+
+
+        /* =================================
+           LOGOTIPO
+        ================================= */
+
+        .logo {
+            width: 190px;
+            max-width: 65vw;
+            height: auto;
+
+            display: block;
+
+            margin:
+                0 auto 18px;
+        }
+
+
+        /* =================================
+           TITULOS
+        ================================= */
+
+        .brand-title {
+            margin: 0;
+
+            text-align: center;
+
+            font-size: clamp(
+                28px,
+                7vw,
+                40px
+            );
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+        .brand-subtitle {
+            margin:
+                8px auto 0;
+
+            max-width: 520px;
+
+            text-align: center;
+
+            font-size: clamp(
+                15px,
+                4vw,
+                18px
+            );
+
+            line-height: 1.5;
+
+            color: #5f6b73;
+        }
+
+
+        /* =================================
+           CONTENEDOR DE OPCIONES
+        ================================= */
+
+        .options {
+            width: 100%;
+            max-width: 430px;
+
+            margin-top: 35px;
+        }
+
+
+        /* =================================
+           BOTONES
+        ================================= */
+
+        .option-button {
+
+            width: 100%;
+
+            min-height: 68px;
+
+            margin-bottom: 18px;
+
+            padding:
+                14px 22px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            border-radius: 18px;
+
+            text-decoration: none;
+
+            font-size: 19px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.2px;
+
+            transition:
+                transform 0.15s ease,
+                box-shadow 0.15s ease;
+
+            -webkit-tap-highlight-color:
+                transparent;
+        }
+
+        .option-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .option-button:active {
+            transform: scale(0.98);
+        }
+
+
+        /* =================================
+           PASAJERO
+        ================================= */
+
+        .passenger-button {
+
+            background: #ffffff;
+
+            color: #00a6a6;
+
+            border:
+                2px solid #00a6a6;
+
+            box-shadow:
+                0 5px 16px
+                rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =================================
+           CONDUCTOR
+        ================================= */
+
+        .driver-button {
+
+            background: #00a6a6;
+
+            color: #ffffff;
+
+            border:
+                2px solid #00a6a6;
+
+            box-shadow:
+                0 7px 18px
+                rgba(0, 166, 166, 0.22);
+        }
+
+
+        /* =================================
+           ICONOS
+        ================================= */
+
+        .button-icon {
+            font-size: 25px;
+            line-height: 1;
+        }
+
+
+        /* =================================
+           INFORMACIÓN
+        ================================= */
+
+        .information {
+
+            width: 100%;
+            max-width: 430px;
+
+            margin-top: 8px;
+
+            padding:
+                18px 20px;
+
+            text-align: center;
+
+            border-radius: 16px;
+
+            background:
+                rgba(255, 255, 255, 0.9);
+
+            border:
+                1px solid #e5e9eb;
+
+            color: #68747c;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =================================
+           PIE
+        ================================= */
+
+        .footer {
+
+            margin-top: auto;
+
+            padding-top: 30px;
+
+            text-align: center;
+
+            color: #8a959c;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =================================
+           PANTALLAS PEQUEÑAS
+        ================================= */
+
+        @media (max-height: 650px) {
+
+            .portal {
+                padding-top: 20px;
+            }
+
+            .logo {
+                width: 145px;
+                margin-bottom: 10px;
+            }
+
+            .options {
+                margin-top: 22px;
+            }
+
+            .option-button {
+                min-height: 58px;
+                margin-bottom: 12px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 
 <body>
 
-    <!-- ============================
-         CONTENEDOR PRINCIPAL
-    ============================= -->
-
-    <main class="conecta-container">
+    <main class="portal">
 
 
-        <!-- ============================
-             LOGOTIPO
-        ============================= -->
+        <!-- ==============================
+             LOGO CONECTA
+        =============================== -->
 
-        <section class="conecta-header">
-
-            <img
-                src="assets/logo-conecta.png"
-                alt="Conecta ViajaYa"
-                class="conecta-logo"
-                onerror="this.style.display='none'"
-            >
-
-            <h1>
-                🚗 Conecta ViajaYa
-            </h1>
-
-            <h2>
-                Tu plataforma de movilidad conectada
-            </h2>
-
-            <p class="conecta-subtitle">
-                Herramientas y servicios para pasajeros y conductores.
-            </p>
-
-        </section>
+        <img
+            src="assets/logo-conecta.png"
+            alt="Conecta ViajaYa"
+            class="logo"
+        >
 
 
-        <!-- ============================
-             MENÚ PRINCIPAL
-        ============================= -->
+        <!-- ==============================
+             PRESENTACIÓN
+        =============================== -->
 
-        <section class="conecta-menu">
+        <h1 class="brand-title">
+            Conecta ViajaYa
+        </h1>
+
+        <p class="brand-subtitle">
+            Tu plataforma de movilidad conectada.
+            Herramientas y servicios para pasajeros
+            y conductores.
+        </p>
 
 
-            <!-- ============================
-                 PASAJERO
-            ============================= -->
+        <!-- ==============================
+             OPCIONES PRINCIPALES
+        =============================== -->
+
+        <section class="options">
+
+
+            <!-- PASAJERO -->
 
             <a
                 href="pasajero/"
-                class="conecta-button conecta-button-primary"
+                class="option-button passenger-button"
             >
 
-                👤
+                <span class="button-icon">
+                    👤
+                </span>
 
                 <span>
                     Soy pasajero
@@ -86,16 +363,16 @@
             </a>
 
 
-            <!-- ============================
-                 CONDUCTOR
-            ============================= -->
+            <!-- CONDUCTOR -->
 
             <a
                 href="conductor/"
-                class="conecta-button conecta-button-secondary"
+                class="option-button driver-button"
             >
 
-                🚗
+                <span class="button-icon">
+                    🚗
+                </span>
 
                 <span>
                     Soy conductor
@@ -107,40 +384,35 @@
         </section>
 
 
-        <!-- ============================
+        <!-- ==============================
              INFORMACIÓN
-        ============================= -->
+        =============================== -->
 
-        <section class="conecta-info">
+        <section class="information">
 
-            <p>
-                Conecta reúne herramientas útiles para
-                mejorar la experiencia de pasajeros y
-                conductores.
-            </p>
+            Conecta integra tecnología,
+            herramientas digitales y servicios
+            pensados para mejorar la experiencia
+            de movilidad.
 
         </section>
 
 
-        <!-- ============================
+        <!-- ==============================
              PIE DE PÁGINA
-        ============================= -->
+        =============================== -->
 
-        <footer class="conecta-footer">
+        <footer class="footer">
 
-            <p>
-                © 2026 Conecta ViajaYa
-            </p>
+            © 2026 Conecta ViajaYa
+            <br>
 
-            <p>
-                Conectando viajes. Creando herramientas.
-            </p>
+            Conectando viajes. Creando herramientas.
 
         </footer>
 
 
     </main>
-
 
 </body>
 
