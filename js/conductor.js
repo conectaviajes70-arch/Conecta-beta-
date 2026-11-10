@@ -27,7 +27,34 @@ let mapDetail = null;
 let mapActive = null;
 let isOnline = false;
 
+// ======================================
+// FORMATO DE FECHA Y HORA
+// HORARIO DE CIUDAD DE MÉXICO
+// ======================================
 
+function formatearFechaHora(fecha) {
+
+    if (!fecha) {
+        return "Fecha no disponible";
+    }
+
+    const fechaObj = new Date(fecha);
+
+    if (isNaN(fechaObj.getTime())) {
+        return String(fecha);
+    }
+
+    return new Intl.DateTimeFormat("es-MX", {
+        timeZone: "America/Mexico_City",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    }).format(fechaObj);
+
+}
 // ======================================
 // REFERENCIAS AL USUARIO ACTUAL
 // ======================================
@@ -763,7 +790,7 @@ async function loadViajesDisponibles() {
                     div.innerHTML = `
 
                         <strong>
-                            ${viaje.fecha || ""}
+                              ${formatearFechaHora(viaje.fecha)}
                         </strong>
 
                         <br>
