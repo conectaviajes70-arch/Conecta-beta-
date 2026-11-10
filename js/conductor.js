@@ -26,25 +26,7 @@ let currentTrip = null;
 let mapDetail = null;
 let mapActive = null;
 let isOnline = false;
-function formatearFechaHora(fecha) {
-    if (!fecha) return "Fecha no disponible";
 
-    const fechaObj = new Date(fecha);
-
-    if (isNaN(fechaObj.getTime())) {
-        return String(fecha);
-    }
-
-    return new Intl.DateTimeFormat("es-MX", {
-        timeZone: "America/Mexico_City",
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true
-    }).format(fechaObj);
-}
 
 // ======================================
 // REFERENCIAS AL USUARIO ACTUAL
@@ -88,7 +70,25 @@ function obtenerConductorActual() {
 // ======================================
 // NAVEGACIÓN ENTRE PANTALLAS
 // ======================================
+function formatearFechaHora(fecha) {
+    if (!fecha) return "Fecha no disponible";
 
+    const fechaObj = new Date(fecha);
+
+    if (isNaN(fechaObj.getTime())) {
+        return String(fecha);
+    }
+
+    return new Intl.DateTimeFormat("es-MX", {
+        timeZone: "America/Mexico_City",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    }).format(fechaObj);
+}
 function showScreen(screenId) {
 
     const screens =
